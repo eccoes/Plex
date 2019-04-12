@@ -12,4 +12,3 @@ cd ..
 autoreconf -f -i
 ./configure && make
 make install
-cd /
