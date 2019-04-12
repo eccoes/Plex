@@ -8,7 +8,6 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Install rar2fs
-RUN mkdir /tmp/
 COPY rar2fs-assets/install_rar2fs.sh /tmp/
 RUN /bin/sh /tmp/install_rar2fs.sh
 RUN mkdir /data-unrar
