@@ -7,9 +7,9 @@ tar -zxvf unrarsrc-5.4.5.tar.gz
 
 cd unrar
 make lib
-sudo make install-lib
+make install-lib
 cd ..
 
 autoreconf -f -i
 ./configure && make
-sudo make install
+make install
