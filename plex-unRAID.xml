@@ -18,28 +18,22 @@
   <Registry>https://hub.docker.com/r/plexinc/pms-docker/</Registry>
   <Repository>plexinc/pms-docker</Repository>
   <BindTime>true</BindTime>
-  <Privileged>false</Privileged>
+  <Privileged>true</Privileged>
   <Environment>
-    <Variable>
-      <Name>PLEX_CLAIM</Name>
-      <Value>Insert Token from https://plex.tv/claim</Value>
-    </Variable>
-    <Variable>
-      <Name>PLEX_UID</Name>
-      <Value>99</Value>
-    </Variable>
-    <Variable>
-      <Name>PLEX_GID</Name>
-      <Value>100</Value>
-    </Variable>
     <Variable>
       <Name>VERSION</Name>
       <Value>latest</Value>
     </Variable>
   </Environment>
-  <Networking>
+ <Networking>
     <Mode>host</Mode>
-    <Publish/>
+    <Publish>
+      <Port>
+        <HostPort></HostPort>
+        <ContainerPort>32400</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
   </Networking>
   <Data>
     <Volume>
