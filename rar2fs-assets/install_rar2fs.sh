@@ -3,8 +3,8 @@
 cd /tmp
 git clone https://github.com/hasse69/rar2fs.git
 cd rar2fs
-wget https://www.rarlab.com/rar/unrarsrc-5.9.4.tar.gz
-tar -xvzf unrarsrc-5.9.4.tar.gz
+wget https://www.rarlab.com/rar/unrarsrc-6.0.2.tar.gz
+tar -xvzf unrarsrc-6.0.2.tar.gz
 cd unrar
 make lib
 make install-lib
