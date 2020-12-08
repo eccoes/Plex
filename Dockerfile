@@ -1,4 +1,4 @@
-FROM plexinc/pms-docker:public
+FROM plexinc/pms-docker:latest
 
 
 # Add libs & tools
