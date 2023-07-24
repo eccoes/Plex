@@ -15,25 +15,31 @@
     All your movie, TV Show, music, and photo collections at your fingertips, anywhere you go on all the devices you love. 
   </Description>
   <Project>https://plex.tv/</Project>
-  <Registry>https://hub.docker.com/r/plexinc/pms-docker/</Registry>
-  <Repository>plexinc/pms-docker</Repository>
+  <Registry>https://hub.docker.com/r/eccoes/plex/</Registry>
+  <Repository>eccoes/Plex</Repository>
   <BindTime>true</BindTime>
-  <Privileged>true</Privileged>
+  <Privileged>false</Privileged>
   <Environment>
+    <Variable>
+      <Name>PLEX_CLAIM</Name>
+      <Value>Insert Token from https://plex.tv/claim</Value>
+    </Variable>
+    <Variable>
+      <Name>PLEX_UID</Name>
+      <Value>99</Value>
+    </Variable>
+    <Variable>
+      <Name>PLEX_GID</Name>
+      <Value>100</Value>
+    </Variable>
     <Variable>
       <Name>VERSION</Name>
       <Value>latest</Value>
     </Variable>
   </Environment>
- <Networking>
+  <Networking>
     <Mode>host</Mode>
-    <Publish>
-      <Port>
-        <HostPort></HostPort>
-        <ContainerPort>32400</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
+    <Publish/>
   </Networking>
   <Data>
     <Volume>
