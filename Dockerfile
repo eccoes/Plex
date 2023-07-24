@@ -25,7 +25,7 @@ VOLUME /data
 VOLUME /cache
 
 # Add startup script
-COPY rar2fs-assets/rar2fs-mount.sh /tmp/
+COPY rar2fs-assets/rar2fs-mount.sh /tmp/rar2fs-assets/rar2fs-mount.sh
 RUN ["chmod", "+x", "/tmp/rar2fs-mount.sh"]
 ENTRYPOINT ["/tmp/rar2fs-mount.sh"]
 CMD ["/jellyfin/jellyfin"]
