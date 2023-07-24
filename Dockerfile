@@ -1,5 +1,4 @@
-FROM jellyfin/jellyfin
-
+FROM plexinc/pms-docker:latest
 
 # Add libs & tools
 RUN apt-get update && \
@@ -17,15 +16,10 @@ RUN apt-get remove -y autoconf build-essential git automake && \
     apt autoremove -y
 RUN rm -rf /tmp/* /var/tmp/*
 
-EXPOSE 8096 8920
+# Add start script
+COPY rar2fs-assets/30-rar2fs-mount /etc/cont-init.d/
 
 # Volumes
 VOLUME /config
 VOLUME /data
-VOLUME /cache
-
-# Add startup script
-COPY rar2fs-assets/rar2fs-mount.sh /tmp/rar2fs-assets/rar2fs-mount.sh
-RUN ["chmod", "+x", "/tmp/rar2fs-mount.sh"]
-ENTRYPOINT ["/tmp/rar2fs-mount.sh"]
-CMD ["/jellyfin/jellyfin"]
+VOLUME /transcode
