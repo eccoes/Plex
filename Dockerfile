@@ -23,3 +23,9 @@ COPY rar2fs-assets/30-rar2fs-mount /etc/cont-init.d/
 VOLUME /config
 VOLUME /data
 VOLUME /transcode
+
+# Add startup script
+COPY rar2fs-assets/rar2fs-mount.sh /tmp/
+RUN ["chmod", "+x", "/tmp/rar2fs-mount.sh"]
+ENTRYPOINT ["/tmp/rar2fs-mount.sh"]
+CMD ["/plex/plex"]
