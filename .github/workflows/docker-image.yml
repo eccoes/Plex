@@ -48,10 +48,10 @@ jobs:
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag eccoes/plex:latest
 
-#     - uses: actions/checkout@v2,
+#     - uses: actions/checkout@v4,
 #     - name: Tag the Docker image
 #       run: docker tag plex:$(date +%s) eccoes/plex:$(date +%s)
 # asd
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Push the Docker image
         run: docker push eccoes/plex:latest
