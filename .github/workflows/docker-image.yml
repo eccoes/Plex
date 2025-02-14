@@ -37,14 +37,14 @@ jobs:
       #- name: Start Docker
       #  run: sudo systemctl start docker
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Docker Login
         env:
           DOCKER_USER: ${{secrets.DOCKER_HUB_USER}}
           DOCKER_PASSWORD: ${{secrets.DOCKER_HUB_TOKEN}}
-        run: docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_TOKEN
+        run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag eccoes/plex:latest
 
