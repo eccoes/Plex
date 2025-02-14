@@ -42,7 +42,7 @@ jobs:
         env:
           DOCKER_USER: ${{secrets.DOCKER_HUB_USER}}
           DOCKER_PASSWORD: ${{secrets.DOCKER_HUB_TOKEN}}
-        run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        run: docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD
 
       - uses: actions/checkout@v2
       - name: Build the Docker image
