@@ -28,7 +28,7 @@ jobs:
       #     docker rmi $(docker images -a -q)
       #     docker volume rm $(docker volume ls -q)
 
-      #- uses: actions/checkout@v2
+      #- uses: actions/checkout@v4
       #- name: Install Docker
       #  run: |
       #    curl -fsSL https://get.docker.com -o get-docker.sh
