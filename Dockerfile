@@ -10,6 +10,7 @@ RUN apt-get update && \
 COPY rar2fs-assets/install_rar2fs.sh /tmp/
 RUN /bin/sh /tmp/install_rar2fs.sh
 RUN mkdir /data-unrar
+RUN mkdir /cache-unrar
 
 # CLEAN Image
 RUN apt-get remove -y autoconf build-essential git automake && \
@@ -18,6 +19,9 @@ RUN rm -rf /tmp/* /var/tmp/*
 
 # Add start script
 COPY rar2fs-assets/30-rar2fs-mount /etc/cont-init.d/
+COPY rar2fs-assets/rar2fs-mount.sh /tmp/
+RUN ["chmod", "+x", "/tmp/rar2fs-mount.sh"]
+ENTRYPOINT ["/tmp/rar2fs-mount.sh"]
 
 # Volumes
 VOLUME /config
